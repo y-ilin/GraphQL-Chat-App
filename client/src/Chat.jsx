@@ -110,7 +110,7 @@ const Chat = () => {
   };
 
   return (
-    <Container>
+    <Container data-testid="chat-app">
       <Messages user={state.user} />
       <Row>
         <Col xs={2} style={{ padding: 0 }}>
@@ -122,6 +122,7 @@ const Chat = () => {
         </Col>
         <Col xs={8}>
           <FormInput
+            data-testid="message-input"
             label="User"
             value={state.content}
             onChange={(e) => setState({ ...state, content: e.target.value })}

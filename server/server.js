@@ -1,4 +1,5 @@
 const { GraphQLServer, PubSub } = require("graphql-yoga");
+// const { messages } = require("./contants");
 
 const messages = [];
 
