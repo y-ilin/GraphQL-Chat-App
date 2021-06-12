@@ -54,9 +54,13 @@ const resolvers = {
   },
 };
 
+const options = {
+  port: process.env.PORT || 4000,
+};
+
 // Create a new PubSub that will be supplied as context
 const pubsub = new PubSub();
 const server = new GraphQLServer({ typeDefs, resolvers, context: { pubsub } });
-server.start(({ port }) => {
+server.start(options, ({ port }) => {
   console.log(`Server on https://localhost:${port}`);
 });
