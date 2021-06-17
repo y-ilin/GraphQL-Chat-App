@@ -3,16 +3,26 @@ const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPl
 
 const deps = require("./package.json").dependencies;
 module.exports = {
+  entry: "./src/index.js",
+
+  // output: {
+  //   publicPath: "http://localhost:8080/",
+  // },
   output: {
-    publicPath: "http://localhost:8080/",
+    path: __dirname + "/dist",
+    publicPath: "/",
+    filename: "bundle.js",
   },
 
   resolve: {
     extensions: [".jsx", ".js", ".json"],
   },
 
+  // devServer: {
+  //   port: 8080,
+  // },
   devServer: {
-    port: 8080,
+    contentBase: "./dist",
   },
 
   module: {
