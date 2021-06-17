@@ -15,6 +15,7 @@ const link = new WebSocketLink({
   uri: "ws://localhost:4000/",
   options: {
     reconnect: true,
+    playground: "/playground",
   },
 });
 
