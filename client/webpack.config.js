@@ -9,7 +9,7 @@ module.exports = {
   //   publicPath: "http://localhost:8080/",
   // },
   output: {
-    path: __dirname + "/dist",
+    path: path.resolve(__dirname, "build"),
     publicPath: "/",
     filename: "bundle.js",
   },
@@ -22,7 +22,7 @@ module.exports = {
   //   port: 8080,
   // },
   devServer: {
-    contentBase: "./dist",
+    contentBase: "./build",
   },
 
   module: {
@@ -48,6 +48,8 @@ module.exports = {
     ],
   },
 
+  devtool: "inline-source-map",
+
   plugins: [
     new ModuleFederationPlugin({
       name: "chat",
@@ -68,7 +70,7 @@ module.exports = {
       },
     }),
     new HtmlWebPackPlugin({
-      template: "./src/index.html",
+      template: path.resolve("./index.html"),
     }),
   ],
 };
