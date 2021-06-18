@@ -25,7 +25,6 @@ const client = new ApolloClient({
   uri: "http://localhost:4000/",
   cache: new InMemoryCache(),
 });
-console.log(process.env.PORT);
 
 const GET_MESSAGES = gql`
   subscription getMessages {
