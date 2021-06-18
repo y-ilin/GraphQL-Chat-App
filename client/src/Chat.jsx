@@ -12,10 +12,10 @@ import { Container, Row, Col, FormInput, Button } from "shards-react";
 
 // To use GraphQL Subscriptions with Apollo Client, create this new WebSocketLink
 const link = new WebSocketLink({
-  uri: "ws://localhost:4000/",
+  // uri: "ws://localhost:4000/",
+  uri: "/subscriptions",
   options: {
     reconnect: true,
-    playground: "/playground",
   },
 });
 

@@ -69,6 +69,7 @@ const resolvers = {
 const options = {
   port: process.env.PORT || 4000,
   playground: "/playground",
+  subscriptions: "/subscriptions",
 };
 
 // Create a new PubSub that will be supplied as context
