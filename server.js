@@ -68,6 +68,7 @@ const resolvers = {
 
 const options = {
   port: process.env.PORT || 4000,
+  endpoint: "/",
   playground: "/playground",
   subscriptions: "/subscriptions",
 };
