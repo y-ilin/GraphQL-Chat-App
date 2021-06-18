@@ -5,7 +5,6 @@ const path = require("path");
 const app = express();
 
 const { GraphQLServer, PubSub } = require("graphql-yoga");
-// const { messages } = require("./contants");
 
 app.use(express.static("public"));
 
@@ -68,9 +67,8 @@ const resolvers = {
 
 const options = {
   port: process.env.PORT || 4000,
-  endpoint: "/",
+  endpoint: "/index.html",
   playground: "/playground",
-  subscriptions: "/subscriptions",
 };
 
 // Create a new PubSub that will be supplied as context
