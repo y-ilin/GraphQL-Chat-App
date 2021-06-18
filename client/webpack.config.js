@@ -1,3 +1,4 @@
+const path = require("path");
 const HtmlWebPackPlugin = require("html-webpack-plugin");
 const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPlugin");
 
@@ -70,7 +71,7 @@ module.exports = {
       },
     }),
     new HtmlWebPackPlugin({
-      template: path.resolve("./index.html"),
+      template: path.resolve("./src/index.html"),
     }),
   ],
 };
