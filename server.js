@@ -1,5 +1,4 @@
 const express = require("express");
-const cors = require("cors");
 const path = require("path");
 
 const app = express();
@@ -7,11 +6,6 @@ const app = express();
 const { GraphQLServer, PubSub } = require("graphql-yoga");
 
 app.use(express.static("public"));
-
-app.get("*", (req, res) => {
-  // res.sendFile(path.resolve(__dirname, "public", "index.html"));
-  res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
-});
 
 const messages = [];
 
@@ -68,7 +62,7 @@ const resolvers = {
 
 const options = {
   port: process.env.PORT || 4000,
-  endpoint: "/",
+  endpoint: "/graphql",
   playground: "/playground",
 };
 
@@ -77,4 +71,9 @@ const pubsub = new PubSub();
 const server = new GraphQLServer({ typeDefs, resolvers, context: { pubsub } });
 server.start(options, ({ port }) => {
   console.log(`Server on https://localhost:${port}`);
+});
+
+app.get("*", (req, res) => {
+  // res.sendFile(path.resolve(__dirname, "public", "index.html"));
+  res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
 });
