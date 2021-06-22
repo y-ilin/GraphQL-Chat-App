@@ -5,7 +5,7 @@ const path = require("path");
 
 const { GraphQLServer, PubSub } = require("graphql-yoga");
 
-// app.use(express.static("public"));
+server.express.use(express.static("public"));
 
 const messages = [];
 
