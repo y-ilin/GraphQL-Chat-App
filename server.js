@@ -1,4 +1,4 @@
-const express = require("express");
+// const express = require("express");
 const path = require("path");
 
 // const app = express();
@@ -73,7 +73,7 @@ server.start(options, ({ port }) => {
   console.log(`Server on https://localhost:${port}`);
 });
 
-// app.get("*", (req, res) => {
-//   // res.sendFile(path.resolve(__dirname, "public", "index.html"));
-//   res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
-// });
+server.express.get("*", (req, res) => {
+  res.sendFile(path.resolve(__dirname, "public", "index.html"));
+  // res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
+});
