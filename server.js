@@ -1,4 +1,4 @@
-// const express = require("express");
+const express = require("express");
 const path = require("path");
 
 // const app = express();
@@ -71,7 +71,7 @@ server.start(options, ({ port }) => {
   console.log(`Server on https://localhost:${port}`);
 });
 
-server.express.use(server.express.static("public"));
+server.express.use(express.static("public"));
 
 server.express.get("*", (req, res) => {
   res.sendFile(path.resolve(__dirname, "public", "index.html"));
