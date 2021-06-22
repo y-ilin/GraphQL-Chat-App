@@ -5,8 +5,6 @@ const path = require("path");
 
 const { GraphQLServer, PubSub } = require("graphql-yoga");
 
-server.express.use(express.static("public"));
-
 const messages = [];
 
 const typeDefs = `
@@ -72,6 +70,8 @@ const server = new GraphQLServer({ typeDefs, resolvers, context: { pubsub } });
 server.start(options, ({ port }) => {
   console.log(`Server on https://localhost:${port}`);
 });
+
+server.express.use(express.static("public"));
 
 server.express.get("*", (req, res) => {
   res.sendFile(path.resolve(__dirname, "public", "index.html"));
