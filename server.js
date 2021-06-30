@@ -60,7 +60,7 @@ const resolvers = {
 
 const options = {
   port: process.env.PORT || 4000,
-  endpoint: "/",
+  endpoint: "/graphql",
   playground: "/playground",
 };
 
